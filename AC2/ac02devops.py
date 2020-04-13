@@ -1,6 +1,5 @@
 import os
 from flask import Flask, jsonify, request
-from math import sqrt
 
 app = Flask(__name__)
 
@@ -9,7 +8,7 @@ def func_primos():
 
     count = 0
     num = 2
-
+    primos = ""
     while (count <= 100):
         normal = False
         for i in range(2, num):
@@ -19,10 +18,10 @@ def func_primos():
 
         if (not normal):
             count += 1
-            print(num)
+            primos = primos + (num) + ","
 
     num += 1
-    return
+    return primos
 
 
 if __name__ == "__main__":
